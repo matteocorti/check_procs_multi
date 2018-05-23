@@ -28,9 +28,9 @@ Nagiosgrapher
    To avoid the problem you can just rename the name of the plugin in the
    output:
 
-  ```
-  $ check_procs_multi [arguments] | sed -e 's/CHECK_PROCS_MULTI/MULTIPROC/g'
-  ```
+   ```
+   $ check_procs_multi [arguments] | sed -e 's/CHECK_PROCS_MULTI/MULTIPROC/g'
+   ```
 
 2. adding and removing checks
 
