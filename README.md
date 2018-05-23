@@ -39,17 +39,17 @@ Nagiosgrapher
    will have to delete the .rrd file (losing all the data) or modify it
    (e.g., by using a Perl script and RRD::Simple).
 
-Example script (by Marcus Schopen):
+   Example script (by Marcus Schopen):
 
-```
-#!/usr/bin/perl
+   ```
+   #!/usr/bin/perl
 
-use strict;
-use warnings;
+   use strict;
+   use warnings;
 
-use RRD::Simple;
+   use RRD::Simple;
 
-my $rrd = RRD::Simple->new();
+   my $rrd = RRD::Simple->new();
 
-$rrd->add_source( '/path/file.rrd', 'APACHE2' => 'GAUGE' );
-```
+   $rrd->add_source( '/path/file.rrd', 'APACHE2' => 'GAUGE' );
+   ```
