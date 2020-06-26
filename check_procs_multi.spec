@@ -7,7 +7,7 @@
 ################################################################################
 
 %define version          1.1.2
-%define release          0
+%define release          1
 %define sourcename       check_procs_multi
 %define packagename      nagios-plugins-check-procs-multi
 %define nagiospluginsdir %{_libdir}/nagios/plugins
@@ -31,6 +31,7 @@ Source:    http://www.id.ethz.ch/people/allid_list/corti/%{sourcename}-%{version
 BuildRequires: perl(ExtUtils::MakeMaker)
 
 Requires:  nagios-plugins
+Requires:  perl(File::Slurp)
 
 %description
 check_procs_multi is a Nagios plugin similar to check_procs able to
@@ -63,6 +64,9 @@ rm -rf %{buildroot}
 %{_mandir}/man1/%{sourcename}.1*
 
 %changelog
+* Fri Jun 26 2020 Matteo Corti <matteo.corti@id.ethz.ch> - 1.1.2-1%{?dist}
+- Added dependency to File::Slurp
+
 * Thu Feb 10 2011 Matteo Corti <matteo.corti@id.ethz.ch> - 1.1.2-0%{?dist}
 - renamed to nagios-plugins-check-procs-multi
 
