@@ -1,4 +1,5 @@
 AUTHORS
+build_rpm.sh
 Changes
 check_procs_multi
 check_procs_multi.pod

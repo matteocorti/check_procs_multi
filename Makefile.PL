@@ -1,15 +1,6 @@
 # Load the Module::Install bundled in ./inc/
 use inc::Module::Install;
 
-################################################################################
-# Version information:
-#
-# $Id$
-# $Revision$
-# $HeadURL$
-# $Date$
-#
-
 ##############################################################################
 # Define metadata (we read it from the binary and the POD)
 
@@ -36,7 +27,7 @@ install_script  'check_procs_multi';
 
 WriteMakefile(
     INSTALLSCRIPT        => '/usr/lib/nagios/plugins/contrib',
-    INSTALLSITESCRIPT    => '/usr/lib/nagios/plugins/contrib',
+    INSTALLSITESCRIPT    => '/Usr/lib/nagios/plugins/contrib',
     MAN1PODS             => { 'check_procs_multi.pod' => 'blib/man1/check_procs_multi.1', },
     MAN3PODS             => { },
 );

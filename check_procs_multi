@@ -5,21 +5,14 @@
 #
 # See  the INSTALL file for installation instructions
 #
-# Copyright (c) 2007-2010, Matteo Corti
+# (c) Matteo Corti, ETH Zurich, 2009-2012
+# (c) Matteo Corti, 2009-2021
 #
 # This module is free software; you can redistribute it and/or modify it
 # under the terms of GNU general public license (gpl) version 3,
 # or (at your option) any later version.
 # See the COPYING file for details.
 #
-# RCS information
-# enable substitution with:
-#   $ svn propset svn:keywords "Id Revision HeadURL Source Date"
-#
-#   $Id: check_dir 856 2007-10-31 09:34:21Z corti $
-#   $Revision: 856 $
-#   $HeadURL: https://svn.id.ethz.ch/nagios_plugins/check_dir/check_dir $
-#   $Date: 2007-10-31 10:34:21 +0100 (Wed, 31 Oct 2007) $
 
 use 5.00800;
 
@@ -56,6 +49,7 @@ use vars qw(
   $plugin
   $threshold
   $verbosity
+  $debug
   @lines
   @procs
 );
@@ -163,6 +157,12 @@ sub exec_command {
     # read the whole file
     my @lines = read_file($output);
 
+    if ( $debug ) {
+        foreach (@lines) {
+            print "[DBG] $_";
+        }
+    }
+
     if (  !( close $output )
         && ( $OS_ERROR != 0 ) )
     {
@@ -202,6 +202,7 @@ sub check_prog {
 $help = 0;
 undef $threshold;
 $verbosity = 0;
+$debug = 0;
 @procs     = ();
 $plugin    = Monitoring::Plugin->new( shortname => 'CHECK_PROCS_MULTI' );
 
@@ -210,6 +211,7 @@ my $result = GetOptions(
     'proc|p=s'   => \@procs,
     'help|h|?'   => \$help,
     'verbose|v+' => \$verbosity,
+    'debug|d'    => \$debug,
     'version|V'  => sub {
         print "check_procs_multi version $VERSION\n";
         exit $Monitoring::Plugin::ERRORS{UNKOWN};

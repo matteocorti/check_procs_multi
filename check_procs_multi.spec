@@ -1,11 +1,3 @@
-################################################################################
-# File version information:
-# $Id$
-# $Revision$
-# $HeadURL4
-# $Date$
-################################################################################
-
 %define version          1.1.2
 %define release          1
 %define sourcename       check_procs_multi
@@ -21,11 +13,11 @@ Version:   %{version}
 Obsoletes: check_procs_multi
 Release:   %{release}%{?dist}
 License:   GPLv3+
-Packager:  Matteo Corti <matteo.corti@id.ethz.ch>
+Packager:  Matteo Corti <matteo@corti.li>
 Group:     Applications/System
 BuildRoot: %{_tmppath}/%{packagename}-%{version}-%{release}-root-%(%{__id_u} -n)
-URL:       http://trac.id.ethz.ch/projects/nagios_plugins/wiki/check_procs_multi
-Source:    http://www.id.ethz.ch/people/allid_list/corti/%{sourcename}-%{version}.tar.gz
+URL:       https://github.com/matteocorti/%{sourcename}
+Source:    https://github.com/matteocorti/%{sourcename}/releases/download/v%{version}/%{sourcename}-%{version}.tar.gz
 
 # Fedora build requirement (not needed for EPEL{4,5})
 BuildRequires: perl(ExtUtils::MakeMaker)
