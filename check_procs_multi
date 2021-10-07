@@ -317,13 +317,13 @@ for my $proc (@procs) {
 
     print_verbose "Checking $name\n";
 
-    my $count = scalar grep { /^$name$/mxs } @lines;
+    my $count = scalar grep { /$name/mxs } @lines;
 
     if ( $count == 0 && $pgrep ) {
 
         print_verbose "$name not found trying with pgrep\n", 1;
 
-        $count = scalar exec_command("pgrep -f \/$name\$");
+        $count = scalar exec_command("pgrep -f $name");
 
     }
 
