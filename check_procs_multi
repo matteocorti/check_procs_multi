@@ -214,7 +214,7 @@ my $result = GetOptions(
     'debug|d'    => \$debug,
     'version|V'  => sub {
         print "check_procs_multi version $VERSION\n";
-        exit $Monitoring::Plugin::ERRORS{UNKOWN};
+        exit $Monitoring::Plugin::ERRORS{UNKNOWN};
     },
 );
 
@@ -222,7 +222,7 @@ if ( !check_prog('ps') ) {
     $plugin->nagios_exit( UNKNOWN, 'Error: ps not found' );
 }
 
-# check if pgrep is avaible
+# check if pgrep is available
 my $pgrep = check_prog('pgrep');
 if ( !$pgrep && $verbosity > 0 ) {
     print_verbose("Warning: pgrep not found\n");
