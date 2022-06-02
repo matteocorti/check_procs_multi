@@ -54,7 +54,7 @@ Version 1.1.2
 check_procs_multi --proc crond,1,,1, --proc httpd,1,100,1,200
 
 checks if at least 1 crond process is running and checks that there is
-at least 1 httpd process and no more than 200 httpd proceses (gives a
+at least 1 httpd process and no more than 200 httpd processes (gives a
 warning at 100)
 
 =head1 DIAGNOSTICS
@@ -65,7 +65,7 @@ verbosity.
 =head1 EXIT STATUS
 
 0 if OK, 1 in case of a warning, 2 in case of a critical status and 3
-in case of an unkown problem
+in case of an unknown problem
 
 =head1 DEPENDENCIES
 
