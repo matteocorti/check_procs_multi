@@ -10,7 +10,7 @@
 Summary:   Nagios plugin similar to check_procs able to check several processes at once.
 Name:      %{packagename}
 Version:   %{version}
-Obsoletes: check_procs_multi
+Obsoletes: check_procs_multi <= 100
 Release:   %{release}%{?dist}
 License:   GPLv3+
 Packager:  Matteo Corti <matteo@corti.li>
