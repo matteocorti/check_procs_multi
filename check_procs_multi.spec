@@ -1,5 +1,5 @@
-%define version          1.1.2
-%define release          1
+%define version          1.1.3
+%define release          0
 %define sourcename       check_procs_multi
 %define packagename      nagios-plugins-check-procs-multi
 %define nagiospluginsdir %{_libdir}/nagios/plugins
@@ -56,6 +56,9 @@ rm -rf %{buildroot}
 %{_mandir}/man1/%{sourcename}.1*
 
 %changelog
+* Tue Jul  8 2025 Matteo Corti <matteo@corti..i> - 1.1.3-0%{?dist}
+- Updated to 1.1.3
+
 * Fri Jun 26 2020 Matteo Corti <matteo.corti@id.ethz.ch> - 1.1.2-1%{?dist}
 - Added dependency to File::Slurp
 

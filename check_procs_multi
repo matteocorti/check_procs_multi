@@ -28,7 +28,7 @@ use Monitoring::Plugin;
 use Monitoring::Plugin::Threshold;
 use Readonly;
 
-our $VERSION = '1.1.2';
+our $VERSION = '1.1.4';
 
 Readonly my $NAME  => 0;
 Readonly my $W_MIN => 1;
@@ -281,17 +281,17 @@ for my $proc (@procs) {
         $cmax = $line[$C_MAX];
 
         # sanity checks
-        if ( $wmin && !$wmin =~ /\d+/mxs ) {
+        if ( $wmin && ! ($wmin =~ /\d+/mxs) ) {
             $plugin->nagios_exit( UNKNOWN, "Error: $wmin is not a number" );
         }
-        if ( $wmax && !$wmax =~ /\d+/mxs ) {
+        if ( $wmax && ! ($wmax =~ /\d+/mxs) ) {
             $plugin->nagios_exit( UNKNOWN, "Error: $wmax is not a number" );
         }
 
-        if ( $cmin && !$cmin =~ /\d+/mxs ) {
+        if ( $cmin && ! ($cmin =~ /\d+/mxs) ) {
             $plugin->nagios_exit( UNKNOWN, "Error: $cmin is not a number" );
         }
-        if ( $cmax && !$cmax =~ /\d+/mxs ) {
+        if ( $cmax && ! ($cmax =~ /\d+/mxs) ) {
             $plugin->nagios_exit( UNKNOWN, "Error: $cmax is not a number" );
         }
 
