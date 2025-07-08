@@ -4,7 +4,7 @@ META.yml
 MYMETA.json
 MYMETA.yml
 Makefile
-check_updates-**
+check_procs_multi-**
 **.tdy
 inc
 .DS_Store

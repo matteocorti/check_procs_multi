@@ -28,7 +28,7 @@ use Monitoring::Plugin;
 use Monitoring::Plugin::Threshold;
 use Readonly;
 
-our $VERSION = '1.1.4';
+our $VERSION = '1.1.3';
 
 Readonly my $NAME  => 0;
 Readonly my $W_MIN => 1;
